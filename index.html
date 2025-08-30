@@ -29,6 +29,21 @@
             max-width: 300px;
             border-radius: 20px;
         }
+        .order-section {
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        #thankyou-message {
+            margin-top: 20px;
+            color: green;
+            font-size: 1.3em;
+            display: none;
+        }
         footer {
             margin-top: 50px;
             font-size: 1em;
@@ -43,8 +58,37 @@
         <!-- Local file reference -->
         <img class="icecream-img" src="icecream.jpg" alt="Ice Cream">
     </header>
+
+     <div class="order-section">
+        <p>How many popsicles do you want?</p>
+        <select id="popsicle-select">
+            <option value="">-- Select --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <div id="thankyou-message">Thank you! Please wait for your order.</div>
+    </div>
+    
     <footer>
         &copy; 2025 Harshil and Jayitri’s Ice Cream Shop
     </footer>
+
+     <script>
+        const popsicleSelect = document.getElementById('popsicle-select');
+        const thankYouMessage = document.getElementById('thankyou-message');
+
+        popsicleSelect.addEventListener('change', function() {
+            if (popsicleSelect.value !== "") {
+                thankYouMessage.style.display = 'block';
+            } else {
+                thankYouMessage.style.display = 'none';
+            }
+        });
+    </script>
+    
 </body>
 </html>
